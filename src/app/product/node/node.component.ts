@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
     selector: 'node',
     template: `
     <div>
-        Node :)
+        Node
     </div>
     `
 })
