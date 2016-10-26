@@ -1,12 +1,14 @@
 import 'core-js';
 import 'reflect-metadata';
 import 'zone.js/dist/zone';
-import 'rxjs/Rx';
 
-import "bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { AppComponent } from './app/app.component';
-//import {enableProdMode} from '@angular/core';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/do';
 
-//enableProdMode();
-bootstrap(AppComponent);
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app.module';
+
+platformBrowserDynamic()
+    .bootstrapModule(AppModule);

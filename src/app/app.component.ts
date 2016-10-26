@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
-import ProductComponent from './product/product.component';
 
 @Component({
     selector: 'app-root',
-    directives: [ProductComponent],
-    template: `
-    <product></product>
-    `
+    template: '<h1>My First Angular App</h1>'
 })
-export class AppComponent {
-    name: string = 'Szneba';
-}
+export class AppComponent { }
