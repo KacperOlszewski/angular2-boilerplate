@@ -1,12 +1,12 @@
 import { Component, OnInit }      from '@angular/core';
 import { Contact, ContactService } from './contact.service.ts';
-import { UserService } from './../welcome/user.service.ts';
+import { UserService } from '../welcome/user.service.ts';
 
 declare var require: any;
 
 @Component({
     selector: 'app-contact',
-    template: require('./contact.component.html')
+    templateUrl: './contact.component.html'
 })
 export class ContactComponent implements OnInit {
     contact:  Contact;

@@ -1,17 +1,22 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/app.ts',
+  entry: {
+    app: './src/app.ts'
+  },
   output: {
     path: './dist',
-    filename: 'bundle.js'
+    publicPath: 'http://127.0.0.1:8080/',
+    filename: '[name].js',
+    chunkFilename: '[name].chunk.js'
   },
   module: {
     loaders: [
       {
         test: /\.(ts)$/,
         exclude: /(node_modules)/,
-        loader: 'ts'
+        loaders: ['awesome-typescript-loader', 'angular2-template-loader', 'angular2-router-loader']
       },
       {
         test: /\.css$/,
@@ -38,9 +43,22 @@ module.exports = {
   plugins: [
       new HtmlWebpackPlugin({
         template: './src/index.html'
+      }),
+
+      new webpack.optimize.CommonsChunkPlugin({
+        name: ['app']
       })
   ],
   devServer: {
-    host: '127.0.0.1'
+    historyApiFallback: true,
+    host: '127.0.0.1',
+    proxy: {
+      '/*': {
+        target: 'http://127.0.0.1:8080/',
+        rewrite: function(req){
+          req.url='index.html';
+        }
+      }
+    }
   }
 };

@@ -11,8 +11,8 @@
     "noImplicitAny": true,
 
     "types": [
-      "node",
-      "jasmine"
+      "jasmine",
+      "node"
     ]
   },
   "exclude": [
