@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-root',
-    templateUrl: `
+    template: `
         <nav>
           <a routerLink="welcome" routerLinkActive="active">Welcome</a>
           <a routerLink="contact" routerLinkActive="active">Contact</a>

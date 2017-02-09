@@ -8,12 +8,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
-    "noImplicitAny": true,
-
-    "types": [
-      "jasmine",
-      "node"
-    ]
+    "noImplicitAny": true
   },
   "exclude": [
     "node_modules"
